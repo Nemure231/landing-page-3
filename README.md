@@ -47,17 +47,16 @@ It's super easy to update your Tailwindcss version just with small npm command, 
 
 What are we going to do is updating the base code of Tailwindcss. Because the production css and the base of Tailwindcss source is different file.
 
-1. Update Base Tailwindcss
-2. Open your project folder with File Explorer.
-3. If you noticed, there is a file named "package.json", if the file is exists, then you are in the right location.
-4. Open the package.json with your Sublime Text 3/Visual Studio Code
-5. In that package.json you will see the version of Tailwindcss, in the "devDependencies" line.
-6. Compare your Tailwindcss version with the current version on their website: https://tailwindcss.com/docs/installation, you can see the version on the navbar
-7. If your version is smaller, then you need to update.
-8. Open your Command Prompt on your project location.
-9. Type "npm update".
-10. The loading progress will apper on your Command Prompt, wait until is finish.
-11. And finally, you just updated your Base Tailwindcss.
+1. Open your project folder with File Explorer.
+2. If you noticed, there is a file named "package.json", if the file is exists, then you are in the right location.
+3. Open the package.json with your Sublime Text 3/Visual Studio Code
+4. In that package.json you will see the version of Tailwindcss, in the "devDependencies" line.
+5. Compare your Tailwindcss version with the current version on their website: https://tailwindcss.com/docs/installation, you can see the version on the navbar
+6. If your version is smaller, then you need to update.
+7. Open your Command Prompt on your project location.
+8. Type "npm update".
+9. The loading progress will apper on your Command Prompt, wait until is finish.
+10. And finally, you just updated your Base Tailwindcss.
    
    
 ## Updateing Production Tailwindcss
@@ -79,13 +78,13 @@ Actually this method is called "Watch" more than "Update", so the Tailwindcss ca
 9. After that. just click enter and now your Tailwindcss is begin to do the watch process
    
 Note:
-Remember, the watch process is always on when you activated it, don't close your Command Prompt when your Tailwind in watch mode, unless you turn it on off. But why it's always on? Because the Developer always need to get the new class when they are create the website. Everytime you add/remove class in your index.html and save it again, Tailwindcss will add/remove your class in Production Tailwindcss.
+Remember, the watch process is always on when you activated it, don't close your Command Prompt when your Tailwindcss in watch mode, unless you turn it on off. But why it's always on? Because the Developer always need to get the new class when they are create the website. Everytime you add/remove class in your index.html and save it again, Tailwindcss will add/remove your class in Production Tailwindcss.
 
 Tips:
 Do you think the syntax for watch Tailwindcss is too long? Actually you can short it. If you open your "package.json" file, you will noticed in the "scripts" line, there's a same syntax but warped with: "tailwind-watch": "npx tailwindcss -i ./public/assets/base/tailwindcss/input.css -o ./public/assets/base/tailwindcss/output.css --watch". If you type "npm run tailwind-watch" in Command Prompt, Tailwindcss will run the watch process. Why? because i am alreay made my own npm function that called "tailwind-watch" the inside of that function is the long Tailwindcss watch syntax.
 
 
-## Updateing Minify Tailwindcss
+## Updating Minify Tailwindcss
    
 Minify CSS is smaller version of css file, this is the best type of CSS if you want to put in the production use in my opinion. The main different from normal    CSS is the extension name, Minify CSS have extension name .min.css. There's a lot of website in the internet can minify your css just search it on goggle, you    can use their service, lets get started:
    
@@ -103,7 +102,7 @@ Minify CSS is smaller version of css file, this is the best type of CSS if you w
 12. Paste your minify-css result to repalace the old with new one
 
 
-## Updateing Minify Alpinejs
+## Updating Alpinejs
 
 Alpine favorite Javascript Framework, if you find Alpinejs in my code, of course you need to update it if you want. But mostly, i use Alpinejs because i need more complex Javascript case. Let's get started:
 
