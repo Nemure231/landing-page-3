@@ -49,6 +49,7 @@ It's super easy to update your Tailwindcss version just with small npm command, 
    - The loading progress will apper on your Command Prompt, wait until is finish.
    - And finally, you just updated your Base Tailwindcss.
    
+   
 2. Update Production Tailwindcss
    
    You need to update your Production Tailwindcss not only because there's a newers version of Base Tailwind, but everytime you changed/modified your index.html      file, you need to update the production file. Why? For example you need to use class "font-bold" to give your text bold effect, but in the Production              Tailwindcss, there's no class called "font-bold" we can't use that class, because in the previous work, I (as a Developer) didn't need a bold effect on the        website, IN THE 70/70 CLASS OF PRODUCTION CSS THERE'S NO FONT-BOLD. But in the Base Tailwindcss they have all of the class, including "font-bold". So all we      need to do is GET THE "FONT-BOLD" IN THE BASE TAILWINDCSS AND PUT IT INTO PRODUCTION CSS. Actually this method is called "Watch" more than "Update", so the        Tailwindcss can "Watch" our HTML file, and if there's a newcomer class, Production Tailwindcss will get that class in Base Tailwindcss and add that class          automatically. That's it's. Lets get started how to update/watch:
@@ -62,14 +63,32 @@ It's super easy to update your Tailwindcss version just with small npm command, 
    - Close your tailwind.config.js if your HTML file in the right location
    - Open Command Prompt and type "npx tailwindcss -i ./public/assets/base/tailwindcss/input.css -o ./public/assets/base/tailwindcss/output.css --watch" The first      location is your input.css location and the second is your output.
    - After that. just click enter and now your Tailwindcss is begin to do the watch process
-
-
    
 Note:
 Remember, the watch process is always on when you activated it, don't close your Command Prompt when your Tailwind in watch mode, unless you turn it on off. But why it's always on? Because the Developer always need to get the new class when they are create the website. Everytime you add/remove class in your index.html and save it again, Tailwindcss will add/remove your class in Production Tailwindcss.
 
 Tips:
 Do you think the syntax for watch Tailwindcss is too long? Actually you can short it. If you open your "package.json" file, you will noticed in the "scripts" line, there's a same syntax but warped with: "tailwind-watch": "npx tailwindcss -i ./public/assets/base/tailwindcss/input.css -o ./public/assets/base/tailwindcss/output.css --watch". If you type "npm run tailwind-watch" in Command Prompt, Tailwindcss will run the watch process. Why? because i am alreay made my own npm function that called "tailwind-watch" the inside of that function is the long Tailwindcss watch syntax.
+
+
+3. Update Minify Tailwindcss
+   
+   Minify CSS is smaller version of css file, this is the best type of CSS if you want to put in the production use in my opinion. The main different from normal    CSS is the name of it, Minify CSS have extension name .min.css. There's a lot of website in the internet can minify your css just search it on goggle, you can    use their service, lets get started:
+   
+   - Find a website that provide minify-css service
+   - If you ask me, i will choose https://www.toptal.com/developers/cssminifier/ because compare to other site, that site didn't have ads, have a simple page, and      large textbox perfect to copy my css
+   - Open your output.css that already through updated and watch process
+   - Copy all of the output.css
+   - Paste it into input CSS
+   - Then click "Minify" button
+   - Thats it, you will see your minify version in the right textbox
+   - Copy that result
+   - Open My_Project/public/base/tailwindcss
+   - Find output.min.css
+   - Open that file
+   - Paste your minify-css result
+   
+   
  
    
    
