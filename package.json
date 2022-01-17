@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "tailwind-build-css": "npx tailwindcss -i ./public/assets/base/tailwindcss/input.css -o ./public/assets/base/tailwindcss/output.css --watch",
+    "tailwindcss-watch": "npx tailwindcss -i ./public/assets/base/tailwindcss/input.css -o ./public/assets/base/tailwindcss/output.css --watch",
     "alpinejs-build-mini-js": "npx esbuild ./public/assets/base/alpinejs/input.js --outfile=./public/assets/base/alpinejs/output.min.js  --bundle --minify",
     "minify-css": "postcss ./public/assets/base/tailwindcss/output.css -u cssnano --no-map -o ./public/assets/base/tailwindcss/output.min.css"
   },

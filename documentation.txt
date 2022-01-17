@@ -1,0 +1,16 @@
+Hello there, if you want to give this source to different Developer, remember to tell them to read my documentation below:
+
+https://github.com/Nemure231/My-Docs/blob/main/README.md
+
+Remember, that documentation is only for static website.
+
+If your Developer use website based on a framework like CodeignIter/Laravel/Vue/NuxtJs/NextJs or other modern framework,
+
+They need to follow the guide based on that framework to integrate Tailwindcss,
+
+Because different framework have different way to integrate Tailwindcss.
+
+
+Kindly Regards, 
+
+-Cyrollin
