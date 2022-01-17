@@ -55,20 +55,21 @@ It's super easy to update your Tailwindcss version just with small npm command, 
    
    - Open your project location, and go to this location Your_Project/public/assets/base/tailwindcss
    - You will see the "input.css" and "output.css", the input file is our base Tailwindcss that already updated before, and output will be our production file
-   - Go back to again to root of your project location
-   - You will see there is a file named "tailwind.config.js" that the setting file we needed for making production Tailwind
+   - Go back again to root of your project location
+   - You will see there is a file named "tailwind.config.js" that the setting file we needed for making production Tailwindcss
    - Open that file with your Notepad, or if you have Sublime Text 3/Visual Studio Code it's prettier and well-structured to see .js file with that app.
-   - Take a look at ["./public/**/*.html"], that is your HTML file location, this fuction code [ **/*.html ] is going to find any HTML file in your public folder      so don't remove it. Public folder is the base location i always used store my HTML file, if you change or move the HTML file, you need to change the location      based on your own index.html location, for example if you move it on "/public/my_page" just change its to 
-     ["./public/my_page/**/*.html"].
+   - Take a look at ["./public/**/*.html"], that is your HTML file location, this fuction code "**/*.html" is going to find any HTML file in your public folder        so don't remove it. Public folder is the base location i always used store my HTML file, if you change or move the HTML file, you need to change the              location based on your own index.html location, for example if you move it on "/public/my_page" just change to ./public/my_page/**/*.html
    - Close your tailwind.config.js if your HTML file in the right location
    - Open Command Prompt and type "npx tailwindcss -i ./public/assets/base/tailwindcss/input.css -o ./public/assets/base/tailwindcss/output.css --watch" The first      location is your input.css location and the second is your output.
    - After that. just click enter and now your Tailwindcss is begin to do the watch process
+
+
    
 Note:
-Remember, the watch process is always on when you actived it, don't close your Command Prompt when your Tailwind in watch mode, unless you turn it on off. But why it's always on? Because the Developer always need to get the new class when they are create the website. Everytime you add/remove class in your index.html and save it again, Tailwindcss will watch  
-   
-   
+Remember, the watch process is always on when you activated it, don't close your Command Prompt when your Tailwind in watch mode, unless you turn it on off. But why it's always on? Because the Developer always need to get the new class when they are create the website. Everytime you add/remove class in your index.html and save it again, Tailwindcss will add/remove your class in Production Tailwindcss.
 
+Tips:
+Do you think the syntax for watch Tailwindcss is too long? Actually you can short it. If you open your "package.json" file, you will noticed in the "scripts" line, there's a same syntax but warped with: "tailwind-watch": "npx tailwindcss -i ./public/assets/base/tailwindcss/input.css -o ./public/assets/base/tailwindcss/output.css --watch". If you type "npm run tailwind-watch" in Command Prompt, Tailwindcss will run the watch process. Why? because i am alreay made my own npm function that called "tailwind-watch" the inside of that function is the long Tailwindcss watch syntax.
  
    
    
