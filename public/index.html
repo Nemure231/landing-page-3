@@ -10,7 +10,7 @@
 
     <meta property="og:description" content="We focus on ergonomic" />
     <meta property="og:url" content="https://nemure231.github.io/landing-page-2/public" />
-    <meta property="og:site_name" content="Logoipsum"/>
+    <meta property="og:site_name" content="Logoipsum" />
     <meta property="og:image" content="./assets/img/nav/icon_1.svg" />
 
     <!--meta twitter-->
@@ -36,11 +36,23 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
 </head>
 
-<body class="bg-white mx-auto h-auto w-full flex flex-wrap flex-col justify-center" x-data="{sidebar: false}">
+<body class="bg-white mx-auto h-auto w-full flex flex-wrap flex-col justify-center relative" x-data="{sidebar: false}">
+    <div class="lg:block md:block hidden lg:bg-cover md:bg-cover bg-cover lg:bg-top md:bg-top bg-left-bottom bg-clip-padding bg-no-repeat absolute top-0 h-[55rem] w-full"
+        style="background-image: url('./assets/img/section_1/bg_1.svg')">
+
+    </div>
+
+    <div class="lg:hidden md:hidden block bg-cover bg-bottom bg-clip-padding bg-no-repeat absolute top-0 h-[980px] w-full"
+        style="background-image: url('./assets/img/section_1/bg_2.svg')">
+    </div>
 
     <nav x-bind:class="{'backdrop-blur-md bg-black/40' : ! navbar}"
         class="flex-1 h-full w-full lg:pt-3 lg:pb-3 md:pt-4 md:pb-3 pb-3 pt-3 lg:px-3 md:px-3 px-0 justify-center sticky top-0 z-[401]"
@@ -73,20 +85,33 @@
                 </div>
 
             </div>
-            <div
-                class=" lg:pl-10 lg:pr-2 pl-0 pr-0 lg:flex-1 flex-none lg:order-3 md:order-2 order-0 lg:basis-1/12 md:basis-3/5 basis-1/2">
-                <div class="lg:flex md:flex hidden lg:justify-center md:justify-end justify-end">
-                    <input type="text"
-                        class="font-regular w-auto py-3 px-8 rounded-[39px] focus:outline-none placeholder:text-black"
-                        placeholder="Your Email">
-                </div>
-            </div>
-            <div class=" flex-none lg:order-4 md:order-3 order-0 lg:basis-1/12 md:basis-1/5 basis-1/2">
-                <div class="lg:flex md:flex hidden lg:justify-start md:justify-center justify-end">
-                    <button class="font-button primary-color bg-white py-3 px-8 rounded-[35px]">
-                        Subscribe
-                    </button>
-                </div>
+            <div class="lg:basis-2/12 basis-4/5 lg:order-3 order-2 lg:block md:block hidden">
+                <form action="">
+                    <div class="flex flex-row flex-nowrap justify-end">
+                        <div class=" lg:pl-10 lg:pr-2 pl-o pr-2 lg:flex-1 flex-none ">
+                            <div class="lg:justify-center md:justify-end justify-end relative">
+                                <input type="email" required class="font-regular w-auto py-3 px-8 rounded-[39px] focus:outline-none placeholder:text-black
+                                    ring-0 focus--input invalid--input valid--input" placeholder="Your Email">
+                                <!-- This a custom invalid message, use this when your project have a server-side programming laguage that can handle this -->
+                                <!-- <p class="absolute bg-white text-center py-2 px-3 rounded-xl w-full mt-2 text-red-600 text-xs">
+                                        Your error message
+                                    </p> -->
+
+                            </div>
+                        </div>
+                        <div class=" flex-none ">
+                            <div class="lg:justify-start md:justify-center justify-end">
+                                <button type="submit"
+                                    class="font-button primary-color bg-white py-3 px-8 rounded-[35px]">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+
             </div>
             <div class="lg:hidden md:hidden block flex-none order-2 basis-1/6">
                 <div class="flex lg:justify-start md:justify-center justify-end">
@@ -104,16 +129,17 @@
 
     </nav>
 
-   
+
     <div class="fixed inset-0 backdrop-blur-sm bg-white/5 z-[402]" x-show="sidebar">
 
     </div>
-    
 
-    <aside class="fixed inset-y-0 right-0 w-56 h-auto z-[403] dark-bg" x-on:click.away="sidebar = false" x-show="sidebar"
-        x-transition:enter="transition ease-out duration-500" x-transition:enter-start="transform translate-x-80"
-        x-transition:enter-end="transform translate-x-0" x-transition:leave="transition ease-out duration-500"
-        x-transition:leave-start="transform  translate-x-0" x-transition:leave-end="transform translate-x-80">
+
+    <aside class="fixed inset-y-0 right-0 w-56 h-auto z-[403] dark-bg" x-on:click.away="sidebar = false"
+        x-show="sidebar" x-transition:enter="transition ease-out duration-500"
+        x-transition:enter-start="transform translate-x-80" x-transition:enter-end="transform translate-x-0"
+        x-transition:leave="transition ease-out duration-500" x-transition:leave-start="transform  translate-x-0"
+        x-transition:leave-end="transform translate-x-80">
 
         <div class="flex justify-end py-7 px-2">
             <button class="flex-none px-3" x-on:click="sidebar = false">
@@ -144,32 +170,34 @@
                 Contact
             </a>
         </div>
+        <form action="">
 
-        <div class="flex flex-col flex-nowrap justify-start space-y-3 px-3 mt-3 ">
-            <!-- <div class="grow w-3 mr-3 bg-red-200"> -->
-            <input type="text"
-                class="flex-1 font-regular py-2 px-4 rounded-[35px] focus:outline-none placeholder:text-black"
-                placeholder="Your Email">
-            <!-- </div> -->
-            <button class="flex-1 font-button py-2 px-2 text-white bg-primary-color rounded-[35px]">
-                Subscribe
-            </button>
-        </div>
+            <div class="flex flex-col flex-nowrap justify-start space-y-3 px-3 mt-3 relative">
+
+                <!-- <div class="grow w-3 mr-3 bg-red-200"> -->
+                <input type="email" required class="flex-1 font-regular py-2 px-4 rounded-[35px] focus:outline-none placeholder:text-black
+                    ring-0 focus--input invalid--input valid--input" placeholder="Your Email">
+                <!-- </div> -->
+                <button type="submit" class="flex-1 font-button py-2 px-2 text-white bg-primary-color rounded-[35px]">
+                    Subscribe
+                </button>
+                <!-- This a custom invalid message, use this when your project have a server-side programming laguage that can handle this -->
+                <!-- <p class="bg-white text-center py-2 px-3 rounded-xl w-full mt-2 text-red-600 text-xs">
+                    Your error message
+                </p> -->
+            </div>
+        </form>
 
     </aside>
-   
+
 
     <main class="flex-1 w-full h-full mt-12 mb-0 relative">
         <!-- Section 1 -->
         <section class="w-full h-auto relative">
+
+
             <div
-                class="lg:block md:block hidden lg:-mt-48 md:-mt-52 -mt-40 pt-96 lg:pb-[30rem] md:pb-[28rem] pb-[40rem] lg:bg-cover md:bg-cover bg-cover lg:bg-top md:bg-top bg-left-bottom bg-clip-padding bg-no-repeat absolute top-0 h-auto w-full" style="background-image: url('./assets/img/section_1/bg_1.svg')">
-            </div>
-            <div
-                class="lg:hidden md:hidden block -mt-48 bg-cover bg-bottom bg-clip-padding bg-no-repeat absolute top-0 h-[980px] w-full" style="background-image: url('./assets/img/section_1/bg_2.svg')">
-            </div>
-            <div
-                class="lg:overflow-x-visible md:overflow-x-visible overflow-x-hidden flex lg:flex-row md:flex-row flex-col flex-wrap lg:justify-start md:justify-start justify-center lg:items-start md:items-start items-center relative">
+                class=" flex lg:flex-row md:flex-row flex-col flex-wrap lg:justify-start md:justify-start justify-center lg:items-start md:items-start items-center relative">
                 <div
                     class="lg:mt-16 md:mt-28 sm:mt-6 mt-12 lg:px-0 md:px-0 sm:px-24 px-16 lg:basis-1/2 md:basis-1/2 basis-full lg:order-1 md:order-1 order-2 lg:mr-28 mr-0 flex-none relative">
                     <img class="rounded-xl shadow-xl lg:-ml-12 md:-ml-28 -ml-0 w-fit h-auto object-cover scale-125"
@@ -321,13 +349,17 @@
                         Available exclusivery on Figmaland
                     </p>
                 </div>
-                <div class="px-5 flex flex-col space-y-3 max-w-sm justify-center mx-auto">
-                    <input class="grow rounded-[35px] px-8 py-5 focus:outline-none placeholder-[#18171D] font-regular"
-                        placeholder="Your Email" type="text">
-                    <button class="grow rounded-[35px] px-8 py-5 text-center bg-primary-color text-white font-button">
+                <form action="" class="px-5 flex flex-col space-y-3 max-w-sm justify-center mx-auto">
+                    <input type="text" class="grow rounded-[35px] px-8 py-3 focus:outline-none placeholder-[#18171D] font-regular 
+                    ring-0 focus--input invalid--input valid--input" placeholder="Your Email" required>
+                    <button class="grow rounded-[35px] px-8 py-3 text-center bg-primary-color text-white font-button">
                         Subscribe
                     </button>
-                </div>
+                    <!-- This a custom invalid message, use this when your project have a server-side programming laguage that can handle this -->
+                    <!-- <p class="bg-white text-center py-2 px-3 rounded-xl w-full mt-2 text-red-600 text-xs">
+                    Your error message
+                </p> -->
+                </form>
             </div>
         </section>
         <!-- ENd Section 4 -->
@@ -617,21 +649,40 @@
 
                 <div class="flex flex-wrap lg:flex-row md:flex-row flex-col-reverse items-center justify-center">
                     <div class="flex-1 w-full lg:mr-14 md:mr-14 mr-0 lg:px-0 md:px-0 px-3">
-                        <div class="rounded-xl bg-white pt-10 pb-6 lg:px-8 md:px-8 px-8 space-y-7">
-                            <input
-                                class="w-full block p-3 rounded-3xl text-color-3 placeholder:text-color-3 font-regular-3 bg-secondary-color-3 focus:outline-none border-red border border-gray-200/25"
-                                placeholder="Your Name" type="text">
-                            <input
-                                class="w-full block p-3 rounded-3xl text-color-3 placeholder:text-color-3 font-regular-3 bg-secondary-color-3 focus:outline-none border-red border border-gray-200/25"
-                                placeholder="Your Email" type="email">
-                            <textarea
-                                class="w-full block p-3 text-color-3 placeholder:text-color-3 font-regular-3 bg-secondary-color-3 focus:outline-none border-red border border-gray-200/25"
-                                placeholder="Your Message" type="text" rows="10"></textarea>
-                            <button class="py-3 px-10 bg-primary-color rounded-[35px] text-white font-button-2">
+                        <form action="" class="rounded-xl bg-white pt-10 pb-6 lg:px-8 md:px-8 px-8 space-y-6">
+                            <div class="">
+                                <input type="text" class="w-full p-3 rounded-3xl text-color-3 placeholder:text-color-3 font-regular-3 bg-secondary-color-3 focus:outline-none border border-gray-200/25 
+                                    ring-0 focus--input invalid--input valid--input" placeholder="Your Name" required>
+                                <!-- This a custom invalid message, use this when your project have a server-side programming laguage that can handle this -->
+                                <!-- <p class="px-3 text-red-600 text-xs mt-2">
+                                    Your error message
+                                </p> -->
+
+                            </div>
+                            <div class="">
+                                <input type="email" class="w-full p-3 rounded-3xl text-color-3 placeholder:text-color-3 font-regular-3 bg-secondary-color-3 focus:outline-none border border-gray-200/25 
+                                    ring-0 focus--input invalid--input valid--input" placeholder="Your Email" required>
+                                <!-- This a custom invalid message, use this when your project have a server-side programming laguage that can handle this -->
+                                <!-- <p class="px-3 text-red-600 text-xs mt-2">
+                                    Your error message
+                                </p> -->
+
+                            </div>
+                            <div class="">
+                                <textarea class="w-full p-3 rounded-3xl text-color-3 placeholder:text-color-3 font-regular-3 bg-secondary-color-3 focus:outline-none border border-gray-200/25 
+                                    ring-0 focus--input invalid--input valid--input" placeholder="Your Message"
+                                    type="text" rows="10" required></textarea>
+                                <!-- This a custom invalid message, use this when your project have a server-side programming laguage that can handle this -->
+                                <!-- <p class="px-3 text-red-600 text-xs mt-2">
+                                    Your error message
+                                </p> -->
+                            </div>
+                            <button type="submit"
+                                class="py-3 px-10 bg-primary-color rounded-[35px] text-white font-button-2">
                                 Send
                             </button>
 
-                        </div>
+                        </form>
                     </div>
                     <div class="flex-1">
                         <div class="flex lg:flex-col md:flex-col flex-col-reverse items-center justify-center">
@@ -705,7 +756,7 @@
                     <div class="lg:h-full md:h-full lg:w-full md:w-full w-full h-72 relative rounded-xl" id="map">
 
                     </div>
-                   
+
                 </div>
                 <div class="lg:basis-[30%] md:basis-[30%] basis-full lg:px-0 md:px-0 px-3">
                     <div class="flex flex-col">
@@ -764,8 +815,7 @@
 
 <!-- Base Js -->
 
-<script defer src="./assets/base/alpinejs/output.min.js"></script>
-<script src="./assets/base/leafletjs/leaflet.js"></script>
+<script defer src="./assets/base/alpinejs/alpine.min.js"></script>
 
 <!-- Edd Base Js -->
 
