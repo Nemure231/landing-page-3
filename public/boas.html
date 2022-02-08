@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOAS Home Page</title>
+     <!-- Font Awesome -->
+     <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
+       <link rel="stylesheet" href="./assets/base/tailwindcss/output.css">
+</head>
+
+<body class="body-content">
+    <section class="section-one">
+        <div class="icon-header">
+            <div class="icon-body">
+                <div class="icon-wrap">
+                    <div class="icon-list">
+                        <div>
+                            <a href="http://www.your_link.com">
+                                <img class="icon-size-1 icon-effect " src=".assets/images/fb.png" alt="FB">
+                            </a>
+                        </div>
+                        <div>
+
+                            <a href="http://www.your_link.com">
+                                <img class="icon-size-2 icon-effect " src=".assets/images/tw.png" alt="TW">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://www.your_link.com">
+                                <img class="icon-size-2 icon-effect " src=".assets/images/ig.png" alt="IG">
+                            </a>
+                        </div>
+
+                        <div>
+                            <a href="http://www.your_link.com">
+                                <img class="icon-size-2 icon-effect " src=".assets/images/linkedin.png" alt="LIN">
+                            </a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="controller">
+            <div class="controller-header">
+                <div class="controller-body">
+                    <div class="controller-line-1"></div>
+                    <div class="controller-line-2"></div>
+                    <div class="controller-active controller-auto-active"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-one-content section-one-content-size">
+            <div class="slider slider-size">
+                <div class="slider-header">
+                    <div class="slider-body slider-body-flex">
+                        <div class="slider-list slider-list-padding">
+                            <h1 class="slider-text-header">100% Sustainable Kids Products</h1>
+                            <p class="slider-text-body">
+                                Building a better future for your child has never been easier. All
+                                it takes is one sustainable BOAS purchase at a time.
+                            </p>
+                            <a class="slider-btn-learn" href="">LEARN MORE</a>
+                            <a class="slider-btn-shop" href="">SHOP NOW</a>
+                        </div>
+                        <div class="slider-list slider-list-padding slider-list-hidden">
+                            <h1 class="slider-text-header">100% Profits to Charity</h1>
+                            <p class="slider-text-body">
+                                BOAS is the world's first Profit for Non-Profit — all our
+                                profits are donated to charities that help save our planet.
+                            </p>
+                            <a class="slider-btn-learn" href="">LEARN MORE</a>
+                            <a class="slider-btn-shop" href="">SHOP NOW</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="slider-img-header">
+                <div class="banner-box slider-img-body">
+                    <img class="back-img slider-back-img-size" src=".assets/images/pattern-light-green.png"
+                        alt="BOAS Pattern Image" />
+                    <img class="main-img slider-main-img-size" src=".assets/images/baby-products.png"
+                        alt="BOAS Banner Image" />
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+
+    const slider = document.querySelector(".slider-body");
+    const active = document.querySelector(".controller-active");
+    const line1 = document.querySelector(".controller-line-1");
+    const line2 = document.querySelector(".controller-line-2");
+
+    setInterval(sliders, 5000);
+
+    function sliders() {
+
+        const slider = document.querySelector(".slider-body");
+        const active = document.querySelector(".controller-active");
+        const line1 = document.querySelector(".controller-line-1");
+        const line2 = document.querySelector(".controller-line-2");
+
+        if (active.classList.contains('controller-auto-active')) {
+            slider.style.transform = "translateX(-100%)";
+            active.style.top = "80px";
+            active.classList.remove('controller-auto-active');
+        } else {
+            slider.style.transform = "translateX(0)";
+            active.style.top = "0px";
+            active.classList.add('controller-auto-active');
+        }
+    }
+
+
+    line1.addEventListener('click', () => {
+        slider.style.transform = "translateX(0)";
+        active.style.top = "0px";
+    });
+
+    line2.addEventListener('click', () => {
+        slider.style.transform = "translateX(-100%)";
+        active.style.top = "80px";
+    });
+
+</script>
+
+
+
+
+</html>
